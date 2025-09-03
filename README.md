@@ -1,28 +1,94 @@
+# 🖼 Custom WinForms UI with Rounded Corners
 
-# Csharp-WindowsFormApp-BorderRadius
+This project is a **C# Windows Forms application** that demonstrates how to build a **custom window UI** without the default title bar.  
+It uses **WinAPI (`dwmapi.dll`)** to apply modern rounded corners and provides custom buttons for minimizing, maximizing, and closing the window.
 
-A simple C# Windows Forms application that demonstrates how to apply rounded corners to a form using the **DwmSetWindowAttribute** API.
+---
 
-## Features
-- Rounded window corners in Windows Forms
-- Uses native `dwmapi.dll` for styling
-- Lightweight and easy to integrate
+## 🚀 Features
 
-## Usage
+- 🎨 **Rounded corners** using `DwmSetWindowAttribute`
+- ⬆️ **Custom maximize / restore button**
+- ➖ **Custom minimize button**
+- ❌ **Custom exit button**
+- 🖱 **Draggable form** (click and drag anywhere to move the window)
+- 🔲 No default title bar — fully customizable design
+
+---
+
+## 🛠 Tech Stack
+
+- **Language:** C#  
+- **Framework:** .NET (Windows Forms)  
+- **Interop:** Windows API (`dwmapi.dll`)  
+
+---
+
+## 📂 Project Structure
+
+```
+
+CustomWinFormsUI/
+│── Form1.cs             # Main form logic (UI + events + WinAPI calls)
+│── Form1.Designer.cs    # Auto-generated UI code
+│── Program.cs           # Application entry point
+│── Properties/          # Resources and settings
+│── bin/ / obj/          # Build output
+
+````
+
+---
+
+## ⚙️ How It Works
+
+- On startup, the app applies rounded corners:
+
+```csharp
+var attribute = DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
+var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
+DwmSetWindowAttribute(this.Handle, attribute, ref preference, sizeof(uint));
+````
+
+* Buttons provide custom window control:
+
+  * `button1` → Exit application
+  * `button2` → Toggle maximize/restore
+  * `button3` → Minimize and unfocus
+
+* The **mouse down + move events** let the user drag the window from anywhere on the form.
+
+
+## 🖥 Getting Started
+
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/InshRonin/Csharp-WindowsFormApp-BorderRadius.git
+   git clone https://github.com/InshRonin/Csharp-WindowsFormApp-Custom.git
+   ```
+2. Open the project in **Visual Studio**.
+3. Build and run.
 
+---
 
-2. Open the project in Visual Studio.
-3. Build and run the application.
+## 📌 Possible Extensions
 
-## Requirements
+* Add a **custom title bar** with icons.
+* Implement **dark/light themes**.
+* Integrate with **modern UI frameworks** (e.g., GunaUI, Siticone, Bunifu).
 
-* Windows 10/11
-* .NET Framework / .NET Windows Forms
+---
 
-## License
+## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License** — free to use and modify.
 
+---
+
+## 👨‍💻 Author
+
+Developed by **Inshaf**
+
+```
+
+Do you want me to also add a **step-by-step tutorial section** (like “how to implement rounded corners in your own WinForms project”) so others can learn from your repo?
+```
