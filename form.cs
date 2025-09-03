@@ -1,10 +1,11 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace StudentManagementSystem
+namespace WindowsCustomForm
 {
     public partial class Form1 : Form
     {
+        public Point mouseLocation;
 
         public enum DWMWINDOWATTRIBUTE
         {
@@ -35,6 +36,45 @@ namespace StudentManagementSystem
             DwmSetWindowAttribute(this.Handle, attribute, ref preference, sizeof(uint));
 
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+            this.ActiveControl = null;
+        }
+
+        private void mouseDown(object sender, MouseEventArgs e)
+        {
+            mouseLocation = new Point(-e.X, -e.Y);
+        }
+
+        private void mouseMove(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                Point mousePose = Control.MousePosition;
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
+                Location = mousePose;
+            }
+        }
     }
 }
-//make sure to star this and share and help those who in need of this
+//make sure to star this and share
