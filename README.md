@@ -24,19 +24,6 @@ It uses **WinAPI (`dwmapi.dll`)** to apply modern rounded corners and provides c
 
 ---
 
-## 📂 Project Structure
-
-```
-
-CustomWinFormsUI/
-│── Form1.cs             # Main form logic (UI + events + WinAPI calls)
-│── Form1.Designer.cs    # Auto-generated UI code
-│── Program.cs           # Application entry point
-│── Properties/          # Resources and settings
-│── bin/ / obj/          # Build output
-
-````
-
 ---
 
 ## ⚙️ How It Works
