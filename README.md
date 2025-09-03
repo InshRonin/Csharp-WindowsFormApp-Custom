@@ -24,8 +24,6 @@ It uses **WinAPI (`dwmapi.dll`)** to apply modern rounded corners and provides c
 
 ---
 
----
-
 ## ⚙️ How It Works
 
 - On startup, the app applies rounded corners:
@@ -74,5 +72,3 @@ This project is licensed under the **MIT License** — free to use and modify.
 ## 👨‍💻 Author
 
 Developed by **Inshaf**
-
-```
