@@ -89,6 +89,3 @@ This project is licensed under the **MIT License** — free to use and modify.
 Developed by **Inshaf**
 
 ```
-
-Do you want me to also add a **step-by-step tutorial section** (like “how to implement rounded corners in your own WinForms project”) so others can learn from your repo?
-```
